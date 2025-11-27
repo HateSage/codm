@@ -1,0 +1,36 @@
+func CountAlpha(s string) int {
+Declares a function named CountAlpha
+Takes one parameter: s which is a string
+Returns an integer (the count)
+    count := 0
+Creates a variable count and initializes it to 0
+This will store the number of alphabetic characters we find
+    for _, char := range s {
+Loops through each character in the string s
+range s gives us each character one by one
+_ ignores the index (we don't need it)
+char holds the current character (as a rune/Unicode point)
+        if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') {
+Checks if the character is alphabetic:
+char >= 'a' && char <= 'z' → checks if it's a lowercase letter (a-z)
+char >= 'A' && char <= 'Z' → checks if it's an uppercase letter (A-Z)
+|| means "OR" - true if either condition is true
+            count++
+If the character is alphabetic, add 1 to our count
+    return count
+After checking all characters, return the total count
+How It Works:
+Example: "Hello world"
+
+H → alphabetic ✓ (count = 1)
+e → alphabetic ✓ (count = 2)
+l → alphabetic ✓ (count = 3)
+l → alphabetic ✓ (count = 4)
+o → alphabetic ✓ (count = 5)
+space → not alphabetic ✗
+w → alphabetic ✓ (count = 6)
+o → alphabetic ✓ (count = 7)
+r → alphabetic ✓ (count = 8)
+l → alphabetic ✓ (count = 9)
+d → alphabetic ✓ (count = 10)
+Result: 10
